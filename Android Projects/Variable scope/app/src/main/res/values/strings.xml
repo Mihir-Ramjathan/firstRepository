@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Variable scope</string>
+    <string name="coffee_shop">Coffee shop</string>
+    <string name="your_total_will_appear_here">Your total will appear here</string>
+</resources>
