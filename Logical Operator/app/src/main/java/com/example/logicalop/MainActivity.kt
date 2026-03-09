@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    //Declarations 
+    //Declarations
     private lateinit var edtName: EditText
     private lateinit var edtAge: EditText
     private lateinit var btnCheck: Button
@@ -25,6 +25,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        //linking the variables to the UI components using their ID's (typecasting)
+        edtName = findViewById(R.id.edtName)
+        edtAge = findViewById(R.id.edtAge)
+        btnCheck = findViewById(R.id.btnCheck)
+        cbStaff = findViewById(R.id.cbStaff)
+        cbITStudent = findViewById(R.id.cbITStudent)
+        cbBanned = findViewById(R.id.cbBanned)
+        textView = findViewById(R.id.textView)
 
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
