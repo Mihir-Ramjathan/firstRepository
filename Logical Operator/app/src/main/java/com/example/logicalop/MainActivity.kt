@@ -35,6 +35,54 @@ class MainActivity : AppCompatActivity() {
         cbBanned = findViewById(R.id.cbBanned)
         textView = findViewById(R.id.textView)
 
+
+        //button to run the code when it is pressed
+        btnCheck.setOnClickListener {
+
+            //get tht user's name from the edittext
+            val name = edtName.text.toString()
+
+            //convert the age inyo a string (int)
+            val age = edtAge.text.toString().toInt()
+
+            //check if checkboxes are selected (true or false)
+            val isITstudent = cbITStudent.isChecked
+            val isBanned = cbBanned.isChecked
+            val isStaff = cbStaff.isChecked
+
+            if(((age >= 18 && isITstudent)|| isStaff) && !isBanned) {
+
+                //if the condition is true above is true
+                textView.text =
+                    "congratulations $name! Yoy are qualify for the student tech discount."
+            }else{
+
+                //if the condition above is false
+                textView.text= "sorry $name, are do not qualify for the discount."
+
+                }
+            /*
+            logic condition explanation
+            step 1: (age >= 18 && isITstudent)
+            >= means greater then or equal to
+            && means AND (both conditions must be true)
+
+            so this check if the user is 18 or older and is an It student
+             step2:
+             || means OR(only one condition needs to be true)
+
+             this means the person can qualify if they are staff member even if they are not an it student
+
+             step 3: && !isBanned)
+             ! means NOT( it reverses the value)
+             !isBanned  means the person must NOT be Banned
+
+             Example
+             isBanned = false
+
+             */
+        }
+
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
